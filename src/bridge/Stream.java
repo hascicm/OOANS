@@ -1,5 +1,7 @@
 package bridge;
 
-public interface Stream {
+import java.nio.Buffer;
 
+public interface Stream {
+	Buffer stremData();
 }
