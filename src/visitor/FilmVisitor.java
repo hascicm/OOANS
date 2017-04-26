@@ -1,5 +1,7 @@
 package visitor;
 
-public interface FilmVisitor {
+import observer.Film;
 
+public interface FilmVisitor {
+	public void visitfilm(Film film);
 }
