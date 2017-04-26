@@ -1,5 +1,6 @@
 package builder;
 
-public interface FilmBuilder {
-
+public abstract class FilmBuilder {
+	public void build() {
+	}
 }
