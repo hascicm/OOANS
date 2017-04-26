@@ -12,6 +12,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
+import state.SaleState;
 
 public abstract class Film implements FilmSubject {
 	private List<File> audio;
@@ -22,6 +23,20 @@ public abstract class Film implements FilmSubject {
 	private String category;
 	private Date year;
 	private List<PriceObserver> observers;
+	private SaleState salestate;
+	
+	public SaleState getSalestate() {
+		return salestate;
+	}
+
+	public void setSalestate(SaleState salestate) {
+		this.salestate = salestate;
+	}
+	
+	 public void Request()
+	    {
+	      salestate.Handle(this);
+	    }
 
 	public void atach(PriceObserver o) {
 		observers.add(o);
@@ -36,5 +51,6 @@ public abstract class Film implements FilmSubject {
 			o.update();
 		}
 	}
+	
 
 }
